@@ -14,6 +14,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okio.BufferedSink;
+import okio.BufferedSource;
 import okio.Okio;
 
 class BaseTest {
@@ -27,7 +28,9 @@ class BaseTest {
         File file = new File(cacheDir, "stories.json");
         if (file.exists()) {
             Log.d("gh", "using existing data from disk");
-            body = Okio.buffer(Okio.source(file)).readUtf8();
+            BufferedSource source = Okio.buffer(Okio.source(file));
+            body = source.readUtf8();
+            source.close();
         } else {
             Log.d("gh", "fetching data");
 
