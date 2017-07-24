@@ -33,6 +33,7 @@ On the fields the JSON property name (`@JsonProperty("name")`).
 - Test on more devices
 - Test with more iterations and see how iterations affect performance
 - Test with larger payloads
+- Method count comparison
 
 #### Results
 
