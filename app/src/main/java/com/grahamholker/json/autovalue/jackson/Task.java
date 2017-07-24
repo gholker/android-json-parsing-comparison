@@ -7,20 +7,28 @@ import com.google.auto.value.AutoValue;
 @AutoValue
 @JsonDeserialize(builder = AutoValue_Task.Builder.class)
 public abstract class Task {
+    @JsonProperty("id")
     public abstract long id();
 
+    @JsonProperty("kind")
     public abstract String kind();
 
+    @JsonProperty("description")
     public abstract String description();
 
+    @JsonProperty("complete")
     public abstract boolean complete();
 
+    @JsonProperty("story_id")
     public abstract long story_id();
 
+    @JsonProperty("position")
     public abstract int position();
 
+    @JsonProperty("created_at")
     public abstract String created_at();
 
+    @JsonProperty("updated_at")
     public abstract String updated_at();
 
     @AutoValue.Builder

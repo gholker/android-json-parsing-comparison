@@ -7,9 +7,10 @@ I compared popular JSON parsing libraries: GSON, Moshi, and Jackson using both P
 
 ##### Performance
 
-The performance comparison does not show strong differentiation, but GSON tends to lag behind Jackson and Moshi. 
+The performance comparison does not show strong differentiation for POJOs, but GSON tends to lag behind Jackson and Moshi.
+For AutoValue, Moshi performs the best.
 
-Jackson with AutoValue performed better than with POJOs. I suspect this is because I specified the field mappings with @JsonProperty.
+The performance measures require improvement. There needs to be more measurements done on more devices. 
 
 ##### Qualitative
 
@@ -50,9 +51,9 @@ On the fields the JSON property name (`@JsonProperty("name")`).
 | AutoMoshi read	| 52.7	        | 174	    | 34        |       |
 | AutoMoshi write	| 33.1	        | 89	    | 25        |       |
 |                   | 85.8	        | 263	    | 59	    | 407.8 |
-| AutoJackson read	| 80.8	        | 264	    | 47        |       |
-| AutoJackson write	| 3             | 18        | 1         |       |
-|                   | 83.8	        | 282	    | 48	    | 413.8 |
+| AutoJackson read	| 80.9	        | 277	    | 45        |       |
+| AutoJackson write	| 59.1          | 198       | 36        |       |
+|                   | 140	        | 475	    | 81	    | 696   |
 | Jackson read	    | 50            | 210	    | 27        |       |
 | Jackson write	    | 39.9	        | 154	    | 21        |       |
 |                   | 89.9	        | 364	    | 48        | 501.9 |

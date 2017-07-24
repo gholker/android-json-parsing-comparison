@@ -12,31 +12,44 @@ import java.util.List;
 @AutoValue
 @JsonDeserialize(builder = AutoValue_Story.Builder.class)
 public abstract class Story {
+    @JsonProperty("id")
     public abstract long id();
 
+    @JsonProperty("created_at")
     public abstract String created_at();
 
+    @JsonProperty("updated_at")
     public abstract String updated_at();
 
+    @JsonProperty("story_type")
     public abstract String story_type();
 
+    @JsonProperty("name")
     public abstract String name();
 
+    @JsonProperty("current_state")
     public abstract String current_state();
 
     @Nullable // Jackson didn't handle missing `long` as 0
+    @JsonProperty("requested_by_id")
     public abstract Long requested_by_id();
 
+    @JsonProperty("url")
     public abstract String url();
 
+    @JsonProperty("project_id")
     public abstract long project_id();
 
+    @JsonProperty("owner_ids")
     public abstract List<Long> owner_ids();
 
+    @JsonProperty("labels")
     public abstract List<Label> labels();
 
+    @JsonProperty("comments")
     public abstract List<Comment> comments();
 
+    @JsonProperty("tasks")
     public abstract List<Task> tasks();
 
     @AutoValue.Builder

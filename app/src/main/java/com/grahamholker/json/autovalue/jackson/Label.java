@@ -7,16 +7,22 @@ import com.google.auto.value.AutoValue;
 @AutoValue
 @JsonDeserialize(builder = AutoValue_Label.Builder.class)
 public abstract class Label {
+    @JsonProperty("id")
     public abstract long id();
 
+    @JsonProperty("project_id")
     public abstract long project_id();
 
+    @JsonProperty("kind")
     public abstract String kind();
 
+    @JsonProperty("name")
     public abstract String name();
 
+    @JsonProperty("created_at")
     public abstract String created_at(); //"2013-10-16T20:58:07Z"
 
+    @JsonProperty("updated_at")
     public abstract String updated_at();
 
     @AutoValue.Builder

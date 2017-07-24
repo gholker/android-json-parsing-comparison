@@ -9,25 +9,35 @@ import com.google.auto.value.AutoValue;
 @AutoValue
 @JsonDeserialize(builder = AutoValue_Comment.Builder.class)
 public abstract class Comment {
-    public abstract String kind();
 
+    @JsonProperty("id")
     public abstract long id();
 
+    @JsonProperty("kind")
+    public abstract String kind();
+
     @Nullable
+    @JsonProperty("text")
     public abstract String text();
 
+    @JsonProperty("person_id")
     public abstract long person_id();
 
+    @JsonProperty("created_at")
     public abstract String created_at(); //"2013-10-16T20:58:07Z"
 
+    @JsonProperty("updated_at")
     public abstract String updated_at();
 
+    @JsonProperty("story_id")
     public abstract long story_id();
 
     @Nullable
+    @JsonProperty("commit_identifier")
     public abstract String commit_identifier();
 
     @Nullable
+    @JsonProperty("commit_type")
     public abstract String commit_type();
 
     @AutoValue.Builder
