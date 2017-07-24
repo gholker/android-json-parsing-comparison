@@ -17,11 +17,11 @@ The performance measures require improvement. There needs to be more measurement
 The APIs are all similar with POJOs. 
 AutoValue requires more manual wrangling for each to work.
 
-Moshi requires [adapters](app/src/main/com/grahamholker/json/autovalue/moshi/Story.java#L77-L79) for each of the types and an [AdapterFactory](app/src/main/com/grahamholker/json/autovalue/moshi/MyAdapterFactory.java).
+Moshi requires [adapters](app/src/main/java/com/grahamholker/json/autovalue/moshi/Story.java#L77-L79) for each of the types and an [AdapterFactory](app/src/main/java/com/grahamholker/json/autovalue/moshi/MyAdapterFactory.java).
 There is a library that generates them for you and setting it up is straight-forward.
 It's straight-forward to create your own adapter in place of the auto generated one if necessary. 
 
-Gson requires an [AdapterFactory](app/src/main/com/grahamholker/json/autovalue/gson/AutoValueAdapterFactory.java) as well. 
+Gson requires an [AdapterFactory](app/src/main/java/com/grahamholker/json/autovalue/gson/AutoValueAdapterFactory.java) as well. 
 There is no library, but there is an example [gist](https://gist.github.com/JakeWharton/0d67d01badcee0ae7bc9).
 
 Jackson requires an annotation on each class and on each field. 
@@ -66,12 +66,14 @@ I chose 10 iterations because it seemed representative of app usage.
 #### References
 
 [AutoValue](https://github.com/google/auto)
+
 [Moshi](https://github.com/square/moshi)
+
 [AutoValue Moshi lib](https://github.com/rharter/auto-value-moshi)
+
 [AutoJackson Examples](https://github.com/artem-zinnatullin/AutoJackson)
+
 [AutoGson setup](https://gist.github.com/JakeWharton/0d67d01badcee0ae7bc9)
-
-
 	
 
 
